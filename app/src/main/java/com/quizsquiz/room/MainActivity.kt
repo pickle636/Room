@@ -32,12 +32,12 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         val petDao = DatabaseRoom.getInstance(this).petDao
 
         GlobalScope.launch {
-//            val strings = userDao.getAllUserIds().map { it.toString() }
-//            val list = listOf("Select") + strings
-//            Log.e("TAG", "$list")
-//            withContext(Dispatchers.Main) {
-//                listLiveData.value = list
-//            }
+            val strings = userDao.getAllUserIds().map { it.toString() }
+            val list = listOf("Select") + strings
+            Log.e("TAG", "$list")
+            withContext(Dispatchers.Main) {
+                listLiveData.value = list
+            }
         }
 
         spinner = findViewById(R.id.sp_ids)
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
         btn_create.setOnClickListener {
             job = Job()
-            if (selectedUserId != "Select") {
+            if (selectedUserId != "Select" && selectedUserId != "Loading list...") {
                 val pet = Pet(0, 0, et_pet_name.text.toString(), "")
                 job.let { theJob ->
                     CoroutineScope(Dispatchers.IO + theJob).launch {

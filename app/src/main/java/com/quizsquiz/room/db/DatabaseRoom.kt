@@ -31,7 +31,7 @@ abstract class DatabaseRoom: RoomDatabase() {
                         "database"
                     )
 //                        .fallbackToDestructiveMigration()
-                        //.addMigrations(MIGRATION_1_2)
+                        .addMigrations(MIGRATION_1_2)
                         .build()
                     INSTANCE = instance
                 }
@@ -41,8 +41,8 @@ abstract class DatabaseRoom: RoomDatabase() {
     }
 }
 
-//val MIGRATION_1_2: Migration = object : Migration(1, 2) {
-////    override fun migrate(database: SupportSQLiteDatabase) {
-////        database.execSQL("ALTER TABLE pet ADD COLUMN birthday TEXT")
-////    }
-////}
+val MIGRATION_1_2: Migration = object : Migration(1, 2) {
+    override fun migrate(database: SupportSQLiteDatabase) {
+        database.execSQL("ALTER TABLE pet ADD COLUMN birthday TEXT")
+    }
+}

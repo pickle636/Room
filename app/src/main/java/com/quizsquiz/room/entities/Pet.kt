@@ -9,5 +9,5 @@ data class Pet(
     val id: Int,
     var userId: Int,
     val name: String,
-    val birthday: String
+    val birthday: String?
 )

@@ -8,6 +8,6 @@ data class Pet(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     var userId: Int,
-    val name: String,
-    val birthday: String?
+    var name: String,
+    var birthday: String?
 )

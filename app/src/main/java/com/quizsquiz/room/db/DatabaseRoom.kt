@@ -1,16 +1,16 @@
 package com.quizsquiz.room.db
 
 import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
+import androidx.room.*
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.quizsquiz.room.entities.Pet
 import com.quizsquiz.room.entities.User
+import com.quizsquiz.room.util.ConvertersDate
 
 
-@Database(entities = [User::class, Pet::class], version = 2)
+@Database(entities = [User::class, Pet::class], version = 4)
+@TypeConverters(ConvertersDate::class)
 abstract class DatabaseRoom: RoomDatabase() {
 
     abstract val userDao: UserDao
@@ -30,8 +30,8 @@ abstract class DatabaseRoom: RoomDatabase() {
                         DatabaseRoom::class.java,
                         "database"
                     )
-//                        .fallbackToDestructiveMigration()
-                        .addMigrations(MIGRATION_1_2)
+                        .fallbackToDestructiveMigration()
+                        //.addMigrations(MIGRATION_1_2)
                         .build()
                     INSTANCE = instance
                 }

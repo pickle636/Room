@@ -3,7 +3,7 @@ package com.quizsquiz.room.util
 import androidx.room.TypeConverter
 import java.util.*
 
-class Converters {
+class ConvertersDate {
 
     @TypeConverter
     fun fromTimestamp(value: Long?): Date? {

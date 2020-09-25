@@ -1,6 +1,5 @@
 package com.quizsquiz.room.db
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
@@ -19,7 +18,7 @@ interface UserDao {
     suspend fun findUserById(id: Int): User
 
     @Query("SELECT id FROM user")
-    fun getAllUserIds(): List<Int>
+    suspend fun getAllUserIds(): List<Int>
 
 
 

@@ -11,114 +11,238 @@
 
     </data>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#EAEAEA"
-        android:orientation="vertical"
-        android:padding="20dp"
-        tools:context=".MainActivity">
-
-        <androidx.cardview.widget.CardView
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:elevation="5dp">
+            android:layout_height="match_parent"
+            android:background="#EAEAEA"
+            android:orientation="vertical"
+            android:padding="20dp"
+            tools:context=".MainActivity">
 
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="15dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="User entity:"
-                    android:textSize="25sp" />
-
-                <EditText
-                    android:id="@+id/et_user_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="User name"
-                    android:text="@={vm.user.name}" />
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:elevation="5dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="15dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Pet entity:"
-                    android:textSize="25sp" />
-
-                <EditText
-                    android:id="@+id/et_pet_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Pet name"
-                    android:text="@={vm.pet.name}" />
-
-                <Button
-                    android:id="@+id/dp_select_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Select date" />
-
-                <TextView
-                    android:id="@+id/tv_selected_date"
-                    android:text="@{vm.selectedDateInText}"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                android:elevation="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingTop="20dp">
+                    android:orientation="vertical"
+                    android:padding="15dp">
 
                     <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="User entity:"
+                        android:textSize="25sp" />
+
+                    <EditText
+                        android:id="@+id/et_user_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="User name"
+                        android:text="@={vm.user.name}" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:elevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Pet entity:"
+                        android:textSize="25sp" />
+
+                    <EditText
+                        android:id="@+id/et_pet_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Pet name"
+                        android:text="@={vm.pet.name}" />
+
+                    <Button
+                        android:id="@+id/dp_select_date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingEnd="20dp"
-                        android:text="Select user ID:"
+                        android:text="Select date" />
 
-                        android:textColor="@android:color/black" />
-
-
-                    <Spinner
-                        android:id="@+id/sp_ids"
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/tv_selected_date"
+                        android:text="@{vm.selectedDateInText}"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="20dp"
+                            android:text="Select user ID:"
+
+                            android:textColor="@android:color/black" />
+
+
+                        <Spinner
+                            android:id="@+id/sp_ids"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
 
 
                 </LinearLayout>
 
+            </androidx.cardview.widget.CardView>
 
-            </LinearLayout>
+            <Button
+                android:id="@+id/btn_create"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:onClick="@{ () -> vm.create()}"
+                android:text="Create" />
 
-        </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/et_counter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Service"
+                        android:layout_gravity="center"
+                        android:textSize="20sp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:orientation="horizontal">
+                        <Button
+                            android:id="@+id/btn_start_service"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="20dp"
+                            android:backgroundTint="@android:color/holo_green_dark"
+                            android:text="Start service"/>
+                        <Button
+                            android:id="@+id/btn_stop_service"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="20dp"
+                            android:backgroundTint="@android:color/holo_red_dark"
+                            android:text="Stop service"/>
+                    </LinearLayout>
+                </LinearLayout>
 
-        <Button
-            android:id="@+id/btn_create"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:onClick="@{ () -> vm.create()}"
-            android:text="Create" />
-    </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="20sp"
+                        android:paddingBottom="10dp"
+                        android:text="Content Provider"/>
+
+                    <EditText
+                        android:id="@+id/et_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Name"/>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_grade"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Grade"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp"
+                        android:orientation="horizontal">
+                        <Button
+                            android:id="@+id/btn_add_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:gravity="center"
+                            android:text="Add name"
+                            android:layout_weight="1"/>
+                        <Button
+                            android:id="@+id/btn_retrieve_student"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginStart="20dp"
+                            android:text="Retrieve student"
+                            android:layout_weight="1"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:gravity="center"
+                        android:text="Example of Broadcast"/>
+                    <Button
+                        android:id="@+id/btn_broadcast_intent"
+                        android:layout_marginTop="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_gravity="center"
+                        android:text="Broadcast Intent"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
 </layout>

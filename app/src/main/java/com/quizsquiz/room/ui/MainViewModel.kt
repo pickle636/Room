@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.*
 import java.util.*
 
-class MainViewModel@ViewModelInject constructor(application: Application, private val repository: Repository): AndroidViewModel(application) {
+class MainViewModel @ViewModelInject constructor(application: Application, private val repository: Repository): AndroidViewModel(application) {
     var selectedDateInText = MutableLiveData<String>()
     var selectedDate = MutableLiveData<Date>()
     var selectedUserId = ""

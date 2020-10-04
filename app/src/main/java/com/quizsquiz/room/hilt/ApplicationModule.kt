@@ -5,6 +5,8 @@ import com.quizsquiz.room.Repository
 import com.quizsquiz.room.db.DatabaseRoom
 import com.quizsquiz.room.db.PetDao
 import com.quizsquiz.room.db.UserDao
+import com.quizsquiz.room.ui.MainViewModel
+import com.quizsquiz.room.util.MyService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,5 +26,6 @@ class ApplicationModule {
     }
     @Provides
     fun provideBookDBRepository(userDao: UserDao, petDao: PetDao) = Repository(userDao, petDao)
+
 
 }

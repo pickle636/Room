@@ -17,6 +17,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:name=".util.MyService" />
+        <receiver android:name=".util.MyReceiver"
+            android:permission="">
+            <intent-filter>
+                <action android:name="com.quizsquiz.room.CUSTOM_INTENT"/>
+            </intent-filter>
+        </receiver>
+        <provider android:name=".util.StudentsProvider"
+            android:authorities="com.quizsquiz.room.util.StudentsProvider"
+            android:exported="false" />
     </application>
 
 </manifest>
